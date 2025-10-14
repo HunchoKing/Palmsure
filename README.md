@@ -1,59 +1,41 @@
-# PalmsureCorpV2
+# Palmsure Insurance Brokers - Corporate Website
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.3.
+This repository contains the full source code for the official corporate website for Palmsure Insurance Brokers. The project is built with a modern Angular framework, featuring Server-Side Rendering (SSR) for optimal performance and SEO.
 
-## Development server
+The website has been professionally developed with a focus on user experience, responsiveness across all devices, and a strong commitment to web accessibility (a11y) standards.
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
-```
+### Key Features
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+*   **Modern Framework:** Built with Angular 17+ and TypeScript.
+*   **Server-Side Rendering (SSR):** Prerendered static pages for fast load times and excellent search engine visibility.
+*   **Fully Responsive Design:** A seamless experience on desktops, tablets, and mobile devices.
+*   **Accessibility Compliant (a11y):** Audited for keyboard navigation and screen reader compatibility (NVDA), ensuring the site is usable by everyone.
+*   **Interactive UI/UX:** Features engaging animations, interactive elements, and a multi-location Google Maps integration to enhance user experience.
+*   **Component-Based Architecture:** A clean, maintainable, and scalable codebase.
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Running the Project (For Development)
 
-```bash
-ng generate component component-name
-```
+1.  **Install Dependencies:**
+    ```bash
+    pnpm install
+    ```
+    (Or `npm install` if you prefer)
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+2.  **Run the Development Server:**
+    ```bash
+    ng serve
+    ```
+    Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-```bash
-ng generate --help
-```
+---
 
-## Building
+### Building for Production
 
-To build the project run:
+To create a final, optimized build for deployment, run the following command:
 
 ```bash
 ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
