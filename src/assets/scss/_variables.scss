@@ -1,0 +1,38 @@
+// src/assets/scss/_variables.scss
+
+// ==========================================================================
+// Project Phoenix: Master Brand & UI Color System
+// ==========================================================================
+
+// 1. Core Brand Palette (Source of Truth)
+// Derived from official logo assets. Do not modify.
+// --------------------------------------------------------------------------
+$brand-navy: #1C2E4A;
+$brand-green: #1A5A4A;
+$brand-off-white: #F5F3EF;
+
+
+// 2. Semantic Application Colors
+// These are aliases we will use throughout the application for consistency.
+// --------------------------------------------------------------------------
+$primary-color: $brand-navy;
+$secondary-color: $brand-green;
+$accent-color: $brand-green; // Alias for clarity in different contexts
+
+
+// 3. Neutral & Text Palette
+// For backgrounds, text, borders, and general UI.
+// --------------------------------------------------------------------------
+$white: #ffffff;
+$background-color: #fcfcfc;    // Main site background, clean and bright
+$gray-lightest: $brand-off-white; // For section backgrounds, provides warmth
+$gray-light: #e0e0e0;         // For light borders and dividers
+$text-color: #333333;           // Standard dark gray for body text
+$text-color-light: #666666;    // Lighter gray for subtitles and secondary text
+
+
+// 4. UI Component-Specific Colors
+// For cards, highlights, and interactive elements, based on the new UI benchmark.
+// --------------------------------------------------------------------------
+$card-background-light: #F4F7FA; // The very light blue-gray from the "Impact" cards
+$border-color: #DEE2E6;          // A standard, neutral border color for cards

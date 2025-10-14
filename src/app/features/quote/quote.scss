@@ -1,0 +1,181 @@
+/* src/app/features/quote/quote.scss */
+@use '../../../assets/scss/variables' as v;
+@use 'sass:color';
+
+:host {
+  display: block;
+  background-color: v.$gray-lightest;
+  min-height: 80vh;
+}
+
+.quote-tool-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: v.$white;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(v.$primary-color, 0.1);
+  border: 1px solid v.$border-color;
+  overflow: hidden;
+}
+
+.quote-header {
+  text-align: center;
+  padding: 2.5rem 2rem;
+  border-bottom: 1px solid v.$border-color;
+
+  h1 {
+    margin: 0 0 0.5rem 0;
+    color: v.$primary-color;
+  }
+  p {
+    margin: 0;
+    color: v.$text-color-light;
+    font-size: 1.1rem;
+  }
+}
+
+.quote-step-content {
+  padding: 2.5rem 2rem;
+}
+
+.step-title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: v.$text-color;
+  margin: 0 0 2.5rem 0;
+}
+
+.selection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.selection-card {
+  border: 2px solid v.$border-color;
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    border-color: v.$secondary-color;
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(v.$secondary-color, 0.15);
+  }
+
+  &.selected {
+    border-color: v.$secondary-color;
+    background-color: color.adjust(v.$secondary-color, $alpha: -0.9);
+  }
+
+  .card-icon {
+    font-size: 3rem; // 48px
+    color: v.$secondary-color;
+  }
+
+  h3 {
+    margin: 1rem 0 0.25rem 0;
+    color: v.$primary-color;
+  }
+
+  p {
+    margin: 0;
+    color: v.$text-color-light;
+    font-size: 0.9rem;
+  }
+}
+
+.quote-footer {
+  padding: 1.5rem 2rem;
+  background-color: v.$gray-lightest;
+  border-top: 1px solid v.$border-color;
+  text-align: right;
+
+  .btn:disabled {
+    background-color: v.$gray-light;
+    cursor: not-allowed;
+  }
+}
+
+// --- Step 2: Form Styles ---
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.form-group {
+  &.full-width {
+    grid-column: 1 / -1;
+  }
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: v.$text-color;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"] { // Added number for consistency
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid v.$border-color;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+    border-color: v.$secondary-color;
+    box-shadow: 0 0 0 3px color.adjust(v.$secondary-color, $alpha: -0.8);
+  }
+
+  &.is-invalid {
+    border-color: #dc3545;
+  }
+}
+
+.validation-message {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+// --- Footer with Multiple Buttons ---
+.quote-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+
+  &.multi-button {
+    justify-content: space-between;
+  }
+}
+
+// --- Step 3: Success Message ---
+.success-message {
+  text-align: center;
+  padding: 3rem 2rem;
+
+  h3 {
+    color: v.$secondary-color;
+    font-size: 1.75rem;
+  }
+  p {
+    max-width: 500px;
+    margin: 1rem auto 2rem auto;
+    line-height: 1.6;
+  }
+}

@@ -1,0 +1,61 @@
+<!-- src/app/layout/footer/footer.html -->
+
+<footer class="site-footer">
+  <div class="footer-container">
+
+    <!-- Column 1: Brand & FSP -->
+    <div class="footer-column brand-column">
+      <h3 class="footer-brand">Palmsure</h3>
+      <p class="tagline">Your trusted insurance partner.</p>
+      <p class="fsp-number">FSP Number: 47156</p>
+    </div>
+
+    <!-- Column 2: Quick Links -->
+    <div class="footer-column">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a routerLink="/about">About Us</a></li>
+        <li><a routerLink="/services">Our Services</a></li>
+        <li><a routerLink="/contact">Contact Us</a></li>
+        <li><a routerLink="/privacy-policy">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 3: Contact (with icons) -->
+    <div class="footer-column">
+      <h4>Contact Us</h4>
+      <address>
+        <div class="contact-item">
+          <span class="material-symbols-outlined">call</span>
+          <a href="tel:0216998370">021 699 8370</a>
+        </div>
+        <div class="contact-item">
+          <span class="material-symbols-outlined">mail</span>
+          <a href="mailto:info@palmsure.co.za">info@palmsure.co.za</a>
+        </div>
+        <div class="contact-item">
+          <span class="material-symbols-outlined">location_on</span>
+          <span>Cape Town, South Africa</span>
+        </div>
+      </address>
+    </div>
+
+    <!-- Social Media Column has been removed -->
+
+  </div>
+
+  <div class="footer-bottom">
+    <div class="copyright-legal">
+      <!-- Copyright year is now dynamic -->
+      <p>&copy; {{ currentYear }} Palmsure Insurance Brokers. All rights reserved.</p>
+      <nav class="legal-links">
+        <a routerLink="/terms-of-service">Terms of Service</a>
+        <span>|</span>
+        <a routerLink="/privacy-policy">Privacy Policy</a>
+      </nav>
+    </div>
+    <div class="developer-credit">
+      Developed by <a href="https://www.coderon.co.za" target="_blank" rel="noopener noreferrer">Coderon</a>
+    </div>
+  </div>
+</footer>

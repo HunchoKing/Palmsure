@@ -1,0 +1,50 @@
+<!-- src/app/layout/header/header.html -->
+
+<header class="site-header" [ngClass]="{'scrolled': isScrolled, 'mobile-menu-active': isMobileMenuOpen}">
+  <div class="header-container">
+    <div class="logo">
+      <a routerLink="/" class="logo-text" (click)="closeMobileMenu()">
+        Palmsure
+        <span class="logo-subtext">Insurance Brokers</span>
+      </a>
+    </div>
+
+    <!-- UPDATED: Nav now has dynamic classes and an overlay for the mobile view -->
+    <nav class="main-nav" id="main-navigation" [ngClass]="{'is-open': isMobileMenuOpen}">
+      <!-- NEW: This overlay closes the menu when clicked -->
+      <div class="nav-overlay" (click)="closeMobileMenu()"></div>
+
+      <!-- UPDATED: List closes menu on link click -->
+      <ul (click)="closeMobileMenu()">
+        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+        <li><a routerLink="/about" routerLinkActive="active">About</a></li>
+        <li><a routerLink="/services" routerLinkActive="active">Services</a></li>
+        <!-- REMOVED: "Resources" link is gone -->
+        <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <div class="header-cta">
+        <a href="#" class="cta-button">
+          <span class="material-symbols-outlined">login</span>
+          <span class="cta-text">Portal</span>
+        </a>
+      </div>
+
+      <!-- NEW: Mobile Menu Hamburger Button -->
+      <button
+        class="mobile-menu-toggle"
+        (click)="toggleMobileMenu()"
+        aria-label="Toggle navigation menu"
+        [attr.aria-expanded]="isMobileMenuOpen"
+        aria-controls="main-navigation"
+      >
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+
+  </div>
+</header>

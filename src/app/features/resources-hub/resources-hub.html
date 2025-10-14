@@ -1,0 +1,49 @@
+<!-- Main container for the resources hub section -->
+<div class="resources-hub-container">
+  <div class="header">
+    <h2>Resources Hub</h2>
+    <p>Your guide to understanding insurance and protecting what matters most.</p>
+  </div>
+
+  <!-- Grid layout for the resource cards -->
+  <div class="resources-grid">
+    <!-- Loop through each resource and create a card -->
+    <div class="resource-card" *ngFor="let resource of resources">
+      <div class="card-content">
+        <h3 class="category">{{ resource.category }}</h3>
+        <h4 class="title">{{ resource.title }}</h4>
+        <p class="excerpt">{{ resource.excerpt }}</p>
+      </div>
+      <!-- ACTION: Replaced <a> tag with a <button> to trigger the modal -->
+      <button class="read-more-btn" (click)="openResourceModal(resource)">
+        Read More &rarr;
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL IMPLEMENTATION -->
+<!-- This entire section is rendered only when a resource is selected -->
+<div class="modal-container" *ngIf="selectedResource" [@modalAnimation]>
+
+  <!-- Overlay: dark background that closes the modal on click -->
+  <div class="modal-overlay" (click)="closeResourceModal()"></div>
+
+  <!-- Panel: The main content window of the modal -->
+  <div class="modal-panel">
+
+    <!-- Close Button: Positioned at the top right of the panel -->
+    <button class="modal-close-btn" (click)="closeResourceModal()" aria-label="Close article">&times;</button>
+
+    <!-- Modal Content: Dynamically bound to the selectedResource object -->
+    <div class="modal-header">
+      <h3 class="category">{{ selectedResource.category }}</h3>
+      <h2 class="title">{{ selectedResource.title }}</h2>
+    </div>
+
+    <div class="modal-body" [innerHTML]="selectedResource.content">
+      <!-- The full article content is injected here -->
+    </div>
+
+  </div>
+</div>

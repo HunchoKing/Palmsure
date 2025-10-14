@@ -1,0 +1,100 @@
+<!-- src/app/features/about/about.html -->
+<main class="about-container">
+  <section class="hero-section">
+    <div class="content-wrapper">
+      <h1>Our Story</h1>
+      <p class="subtitle">
+        Founded in 2016 by Ranganayi Nyamhute, Palmsure Insurance Brokers has grown from a specialized taxi insurance provider to a comprehensive insurance solutions company.
+      </p>
+    </div>
+  </section>
+
+  <!-- UPDATED: Metrics Section with interactive founder card -->
+  <section #metricsSection class="metrics-section">
+    <div class="content-wrapper metrics-grid">
+      <div class="metric-card">
+        <span #metricValue class="metric-value">7+</span>
+        <p class="metric-label">Years of Experience</p>
+      </div>
+      <div class="metric-card">
+        <span #metricValue class="metric-value">1000+</span>
+        <p class="metric-label">Happy Clients</p>
+      </div>
+      <!-- RE-IMPLEMENTED: The cool, interactive founder card -->
+      <a href="#" class="metric-card founder-card" (click)="$event.preventDefault()" aria-label="About the founder, Ranganayi Nyamhute">
+        <div class="founder-image-background"></div>
+        <div class="founder-content">
+          <span class="founder-name">Ranganayi Nyamhute</span>
+          <p class="metric-label">Founder</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="mission-vision-section">
+    <div class="content-wrapper mission-vision-grid">
+      <div class="vision-card">
+        <span class="material-symbols-outlined card-icon">track_changes</span>
+        <h2>Our Mission</h2>
+        <p>To be the most trusted and innovative insurance partner, empowering individuals and businesses to safeguard their future with tailored solutions and unparalleled service.</p>
+      </div>
+      <div class="vision-card">
+        <span class="material-symbols-outlined card-icon">visibility</span>
+        <h2>Our Vision</h2>
+        <p>To be a leader in the insurance industry, recognized for our integrity, client-centric approach, and commitment to empowering communities.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section remains icon-based as requested -->
+  <section class="team-section">
+    <div class="content-wrapper">
+      <h2>Meet Our Team</h2>
+      <div class="team-grid">
+        <div class="team-member-card">
+          <div class="team-member-icon-wrapper icon-bg-1">
+            <span class="material-symbols-outlined">manage_accounts</span>
+          </div>
+          <p class="member-name">Juju</p>
+          <a href="mailto:julius@palmsure.co.za" class="member-email">julius@palmsure.co.za</a>
+        </div>
+        <div class="team-member-card">
+          <div class="team-member-icon-wrapper icon-bg-2">
+            <span class="material-symbols-outlined">manage_accounts</span>
+          </div>
+          <p class="member-name">Suku</p>
+          <a href="mailto:suku@palmsure.co.za" class="member-email">suku@palmsure.co.za</a>
+        </div>
+        <div class="team-member-card">
+          <div class="team-member-icon-wrapper icon-bg-3">
+            <span class="material-symbols-outlined">manage_accounts</span>
+          </div>
+          <p class="member-name">Vee</p>
+          <a href="mailto:valerie@palmsure.co.za" class="member-email">valerie@palmsure.co.za</a>
+        </div>
+        <div class="team-member-card">
+          <div class="team-member-icon-wrapper icon-bg-4">
+            <span class="material-symbols-outlined">manage_accounts</span>
+          </div>
+          <p class="member-name">Zwai</p>
+          <a href="mailto:zwai@palmsure.co.za" class="member-email">zwai@palmsure.co.za</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="partners-section">
+    <div class="content-wrapper">
+      <h2>Associations & Partners</h2>
+      <div class="logo-grid">
+        <img src="assets/images/ctu-logo.png" alt="CTU Logo" class="partner-logo">
+        <img src="assets/images/vum-logo.png" alt="VUM Logo" class="partner-logo">
+        <img src="assets/images/sa-taxi-logo.png" alt="SA Taxi Logo" class="partner-logo">
+        <img src="assets/images/1st-for-women-logo.png" alt="1st for Women Logo" class="partner-logo">
+        <img src="assets/images/auto-and-general-logo.png" alt="Auto & General Logo" class="partner-logo">
+        <img src="assets/images/momentum-logo.png" alt="Momentum Logo" class="partner-logo">
+        <img src="assets/images/felix-body-works-logo.png" alt="Felix Body Works Logo" class="partner-logo">
+      </div>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,49 @@
+/* src/app/features/terms-of-service/terms-of-service.scss */
+@use '../../../assets/scss/variables' as v;
+
+// Shared styles for legal pages
+:host {
+  .legal-page {
+    padding: 4rem 0;
+  }
+
+  .container {
+    max-width: 800px; // Tighter container for readability
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    color: v.$primary-color;
+    border-bottom: 1px solid v.$border-color;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    color: v.$primary-color;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  p, li {
+    line-height: 1.8;
+    color: v.$text-color;
+  }
+
+  a {
+    color: v.$secondary-color;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .last-updated {
+    color: v.$text-color-light;
+    font-style: italic;
+    margin-bottom: 2rem;
+  }
+}

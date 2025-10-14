@@ -1,0 +1,42 @@
+<!-- src/app/features/service-detail/service-detail.html -->
+<main class="service-detail-page" *ngIf="service">
+  <section class="service-hero section-padding-sm">
+    <div class="container">
+      <h1 class="animate-on-load">{{ service.title }}</h1>
+      <p class="subtitle animate-on-load">{{ service.description }}</p>
+    </div>
+  </section>
+
+  <section class="service-content section-padding">
+    <div class="container content-grid">
+      <div class="features">
+        <h3>Key Features</h3>
+        <div class="features-grid">
+          <!-- MODIFIED: Loop now binds to feature.icon and feature.text -->
+          <div *ngFor="let feature of service.keyFeatures" class="feature-item">
+            <span class="material-symbols-outlined feature-icon">{{ feature.icon }}</span>
+            <span class="feature-text">{{ feature.text }}</span>
+          </div>
+        </div>
+        <a routerLink="/contact" class="btn btn-primary">Request a Consultation</a>
+      </div>
+      <div class="service-image-container">
+        <img [src]="service.imageUrl" [alt]="service.title" class="service-image">
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section section-padding">
+    <div class="container">
+      <h2>Have More Questions?</h2>
+      <p>Our expert brokers are here to help you find the perfect policy.</p>
+      <a routerLink="/contact" class="btn btn-primary">Contact Us Today</a>
+    </div>
+  </section>
+</main>
+
+<div *ngIf="!service" class="container section-padding not-found-container">
+  <h2 class="section-title">Service Not Found</h2>
+  <p>The service you are looking for does not exist. Please return to our main services page.</p>
+  <a routerLink="/services" class="btn btn-secondary">View All Services</a>
+</div>

@@ -1,0 +1,6 @@
+// src/app/app.scss
+// This file is now only for styles that apply to the main app shell.
+// The `flex: 1` style ensures the main content area pushes the footer down.
+main {
+  flex: 1;
+}

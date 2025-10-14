@@ -1,0 +1,54 @@
+@use '../../../assets/scss/variables' as v;
+@use 'sass:color';
+
+:host {
+  display: block;
+}
+
+.back-to-top-button {
+  // Positioning
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 999;
+
+  // Appearance
+  background-color: v.$primary-color;
+  color: v.$white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 4px 12px rgba(v.$primary-color, 0.3);
+
+  // Flexbox for icon centering
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // Interaction
+  cursor: pointer;
+
+  // Animation & Visibility
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none; // Not clickable when hidden
+  transition: opacity 0.4s ease, transform 0.4s ease;
+
+  // State when button should be visible
+  &.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto; // Clickable when visible
+  }
+
+  &:hover {
+    background-color: color.adjust(v.$primary-color, $lightness: 10%);
+    transform: translateY(-3px);
+  }
+
+  .material-symbols-outlined {
+    font-size: 2rem; // 32px
+    font-weight: 700;
+  }
+}
