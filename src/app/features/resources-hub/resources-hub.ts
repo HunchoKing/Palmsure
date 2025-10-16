@@ -1,5 +1,5 @@
-import { Component, OnDestroy } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { trigger, transition, style, animate } from '@angular/animations';
 
 export interface Resource {
@@ -29,7 +29,9 @@ export interface Resource {
 })
 export class ResourcesHubComponent implements OnDestroy {
 
-  selectedResource: Resource | null = null;
+  selectedResource: Resource | null = null
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {};
 
   // --- COMPLETE DATA SET WITH ALL SIX ARTICLES ---
   resources: Resource[] = [
@@ -118,15 +120,21 @@ export class ResourcesHubComponent implements OnDestroy {
 
   openResourceModal(resource: Resource): void {
     this.selectedResource = resource;
-    document.body.style.overflow = 'hidden';
+    if (isPlatformBrowser(this.platformId)) {
+      document.body.style.overflow = 'hidden';
+    }
   }
 
   closeResourceModal(): void {
     this.selectedResource = null;
-    document.body.style.overflow = 'auto';
+    if (isPlatformBrowser(this.platformId)) {
+      document.body.style.overflow = 'auto';
+    }
   }
 
   ngOnDestroy(): void {
-    document.body.style.overflow = 'auto';
+    if (isPlatformBrowser(this.platformId)) {
+      document.body.style.overflow = 'auto';
+    }
   }
 }
