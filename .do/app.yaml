@@ -7,7 +7,7 @@ spec:
         branch: main
         deploy_on_push: true
       source_dir: /
-      environment_slug: node-js
+      environment_slug: static-sites
       build_command: npm install -g pnpm && pnpm install && ng build --configuration production --output-mode static
       output_dir: dist/palmsure-corp-v2/browser
       routes:
